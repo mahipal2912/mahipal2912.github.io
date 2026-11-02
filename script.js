@@ -145,12 +145,11 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") setMenu(false);
 });
 
-const sections = [...document.querySelectorAll("section[id]")];
-
 const setActive = () => {
   const fromTop = window.scrollY + 120;
-  let current = sections[0]?.id;
-  for (const section of sections) {
+  const visible = [...document.querySelectorAll("section[id]")].filter((section) => !section.hidden);
+  let current = visible[0]?.id;
+  for (const section of visible) {
     if (section.offsetTop <= fromTop) current = section.id;
   }
   navLinks.forEach((link) => {
@@ -243,9 +242,51 @@ if (canvas && !reduceMotion) {
 }
 
 const STORAGE_KEY = "siteData";
+const EDITOR_KEY = "siteEditor";
 const editorRoot = document.getElementById("editor-root");
 const editorStatus = document.getElementById("editor-status");
+const updateSection = document.getElementById("update");
+const updateNav = document.getElementById("update-nav");
 let site = {};
+let editorReady = false;
+
+const readEditorFlag = () => {
+  const editParam = new URLSearchParams(window.location.search).get("edit");
+  if (editParam === "0" || editParam === "false") {
+    try {
+      localStorage.removeItem(EDITOR_KEY);
+    } catch (e) {}
+    return false;
+  }
+  if (editParam === "1" || editParam === "true") {
+    try {
+      localStorage.setItem(EDITOR_KEY, "1");
+    } catch (e) {}
+    return true;
+  }
+  try {
+    return localStorage.getItem(EDITOR_KEY) === "1";
+  } catch (e) {
+    return false;
+  }
+};
+
+const setEditorVisible = (open) => {
+  if (updateSection) updateSection.hidden = !open;
+  if (updateNav) updateNav.hidden = !open;
+  try {
+    if (open) localStorage.setItem(EDITOR_KEY, "1");
+    else localStorage.removeItem(EDITOR_KEY);
+  } catch (e) {}
+  if (open && !editorReady && window.SITE_DEFAULTS) {
+    buildEditor();
+    bindEditor();
+    editorReady = true;
+  }
+  if (open && window.location.hash === "#update") {
+    updateSection?.scrollIntoView();
+  }
+};
 
 const clone = (value) => JSON.parse(JSON.stringify(value));
 
@@ -740,10 +781,9 @@ const downloadData = () => {
   showStatus("Downloaded data.js. Replace portfolio/data.js, then upload to GitHub Pages.");
 };
 
-if (window.SITE_DEFAULTS) {
-  site = loadSite();
-  renderSite();
-  buildEditor();
+const bindEditor = () => {
+  if (bindEditor.bound) return;
+  bindEditor.bound = true;
 
   document.getElementById("editor-save")?.addEventListener("click", () => {
     applySite(readEditor(), "Saved on this browser. Download data.js when you want this live on GitHub Pages.");
@@ -755,6 +795,13 @@ if (window.SITE_DEFAULTS) {
       localStorage.removeItem(STORAGE_KEY);
     } catch (e) {}
     applySite(clone(window.SITE_DEFAULTS), "Reset to original content.");
+  });
+  document.getElementById("editor-hide")?.addEventListener("click", () => {
+    setEditorVisible(false);
+    const url = new URL(window.location.href);
+    url.searchParams.delete("edit");
+    if (url.hash === "#update") url.hash = "";
+    history.replaceState({}, "", url.pathname + url.search + url.hash);
   });
   document.getElementById("editor-import")?.addEventListener("change", (event) => {
     const file = event.target.files?.[0];
@@ -854,7 +901,28 @@ if (window.SITE_DEFAULTS) {
       buildEditor();
     }
   });
+};
+
+if (window.SITE_DEFAULTS) {
+  site = loadSite();
+  renderSite();
+  setEditorVisible(readEditorFlag());
 } else {
   bindFlip();
   bindTilt();
 }
+
+let footerClicks = 0;
+let footerTimer;
+document.querySelector("footer")?.addEventListener("click", () => {
+  footerClicks += 1;
+  window.clearTimeout(footerTimer);
+  footerTimer = window.setTimeout(() => {
+    footerClicks = 0;
+  }, 900);
+  if (footerClicks >= 5) {
+    footerClicks = 0;
+    setEditorVisible(true);
+    updateSection?.scrollIntoView({ behavior: "smooth" });
+  }
+});

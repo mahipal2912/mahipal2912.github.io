@@ -821,6 +821,11 @@ button.btn,
   scroll-margin-top: 96px;
 }
 
+#update[hidden],
+#update-nav[hidden] {
+  display: none !important;
+}
+
 .editor-toolbar {
   position: sticky;
   top: 12px;

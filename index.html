@@ -39,7 +39,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=12" />
+    <link rel="stylesheet" href="styles.css?v=13" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -104,7 +104,7 @@
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
             <a href="#contact">Contact</a>
-            <a href="#update">Update</a>
+            <a href="#update" id="update-nav" hidden>Update</a>
             <label class="menu-theme">
               <span>Theme</span>
               <select id="theme-select" aria-label="Select theme">
@@ -500,12 +500,12 @@
           </div>
         </section>
 
-        <section id="update" class="reveal">
+        <section id="update" class="reveal" hidden>
           <h2>Update</h2>
           <p class="section-note">
-            Edit any section here, then tap <strong>Save on this browser</strong>.
-            Changes show immediately. Visitors on GitHub Pages see the committed
-            <code>data.js</code> unless you download it and replace that file.
+            This editor is private. Recruiters on the normal site link do not see it.
+            Edit here, then tap <strong>Save on this browser</strong>. Download
+            <code>data.js</code> and upload it when you want GitHub Pages to match.
           </p>
           <div class="editor-toolbar">
             <button class="btn btn-primary" id="editor-save" type="button">Save on this browser</button>
@@ -515,6 +515,7 @@
               <input id="editor-import" type="file" accept="application/json,.js" hidden />
             </label>
             <button class="btn btn-ghost" id="editor-reset" type="button">Reset to original</button>
+            <button class="btn btn-ghost" id="editor-hide" type="button">Hide editor</button>
           </div>
           <p class="editor-status" id="editor-status" hidden></p>
           <div id="editor-root"></div>
@@ -526,6 +527,6 @@
       </main>
     </div>
     <script src="data.js?v=10"></script>
-    <script src="script.js?v=12"></script>
+    <script src="script.js?v=13"></script>
   </body>
 </html>
