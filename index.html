@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mahipal Singh | Software Development Engineer</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme = stored || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
+    <meta
+      name="description"
+      content="Software Development Engineer in Gurugram building end-to-end mobile, TV, kiosk, and healthcare applications with Kotlin, Jetpack Compose, and on-device ML."
+    />
+    <meta name="author" content="Mahipal Singh" />
+    <meta
+      name="keywords"
+      content="Android Developer, Kotlin, Jetpack Compose, MVVM Architecture, Hilt, RESTful APIs, LiteRT, MediaPipe, ML Kit, Android TV, OTT, Kiosk CMS, Medi AI, Gurugram"
+    />
+    <link rel="canonical" href="https://mahipal2912.github.io/" />
+    <meta property="og:title" content="Mahipal Singh | Android Developer" />
+    <meta
+      property="og:description"
+      content="Kotlin, Jetpack Compose, Android TV/OTT, Kiosk CMS, and Medi AI. Based in Gurugram, India."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mahipal2912.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#04111c" id="theme-color" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=12" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mahipal Singh",
+        "jobTitle": "Android Developer",
+        "url": "https://mahipal2912.github.io/",
+        "email": "mailto:smahipal778@gmail.com",
+        "telephone": "+916260849771",
+        "sameAs": [
+          "https://www.linkedin.com/in/mahipalsinghad",
+          "https://github.com/mahipal2912"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="scene" aria-hidden="true">
+      <div class="scene-wash"></div>
+      <div class="scene-grid"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
+      <div class="orb orb-d"></div>
+      <canvas id="particles"></canvas>
+      <div class="scene-shine"></div>
+      <div class="scene-noise"></div>
+    </div>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page">
+      <header class="sidebar">
+        <div class="sidebar-top">
+          <div class="brand">
+            <div class="avatar">
+              <input id="avatar-input" type="file" accept="image/*" hidden />
+              <button class="monogram" id="avatar-button" type="button" aria-label="Upload profile photo">
+                <span class="monogram-fallback" id="avatar-fallback">MS</span>
+                <img class="monogram-photo" id="avatar-photo" alt="Profile photo" hidden />
+                <span class="avatar-overlay" aria-hidden="true"></span>
+              </button>
+              <button class="avatar-remove" id="avatar-remove" type="button" hidden aria-label="Remove photo">
+                ×
+              </button>
+            </div>
+            <a class="brand-text" href="#top">
+              <p class="brand-name" id="brand-name">Mahipal Singh</p>
+              <p class="brand-role" id="brand-role">SDE · End-to-end apps</p>
+            </a>
+          </div>
+          <div class="header-actions">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+              Menu
+            </button>
+          </div>
+        </div>
+        <div class="menu-panel" id="site-nav">
+          <nav class="nav" aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+            <a href="#update">Update</a>
+            <label class="menu-theme">
+              <span>Theme</span>
+              <select id="theme-select" aria-label="Select theme">
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+              </select>
+            </label>
+          </nav>
+          <div class="sidebar-meta">
+            <p class="availability"><span class="pulse"></span> <span id="availability-text">Open to SDE / Android roles</span></p>
+            <p id="sidebar-location">Gurugram, India</p>
+            <div class="social">
+              <a id="social-linkedin" href="https://www.linkedin.com/in/mahipalsinghad" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a id="social-github" href="https://github.com/mahipal2912" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a id="social-email" href="mailto:smahipal778@gmail.com">Email</a>
+              <a id="social-whatsapp" href="https://wa.me/916260849771" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="hero reveal" id="top">
+          <p class="eyebrow" id="hero-eyebrow">2 years 6 months · End-to-end product delivery</p>
+          <h1 id="hero-headline">I design and ship end-to-end applications for mobile, TV, kiosk, and healthcare.</h1>
+          <p class="lede" id="hero-lede">
+            Software Development Engineer at CBSL Group. I take products from architecture and
+            API integration through Play Store and enterprise release — native Android, Flutter,
+            Android TV/OTT, kiosk CMS, on-device ML, and currently <strong>Medi AI</strong>.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" id="hero-resume" href="assets/Mahipal_Singh_Android_Developer_ATS.pdf" download>Download resume</a>
+            <a class="btn btn-ghost" href="#projects">View projects</a>
+            <a class="btn btn-ghost" id="hero-email" href="mailto:smahipal778@gmail.com">Email me</a>
+          </div>
+          <dl class="stats" id="stats-grid">
+            <div class="pop-card" data-tilt>
+              <dt>Experience</dt>
+              <dd>2y 6m</dd>
+            </div>
+            <div class="pop-card" data-tilt>
+              <dt>Play Store</dt>
+              <dd>4.5+ ratings</dd>
+            </div>
+            <div class="pop-card" data-tilt>
+              <dt>Streamly TV</dt>
+              <dd>200+ channels</dd>
+            </div>
+            <div class="pop-card" data-tilt>
+              <dt>Based in</dt>
+              <dd>Gurugram</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section id="about" class="reveal">
+          <h2>About</h2>
+          <div class="glass about-card pop-card" data-tilt id="about-card">
+            <p>
+              Software Development Engineer with <strong>2 years 6 months</strong> of experience
+              delivering <strong>end-to-end applications</strong> — architecture, API contracts,
+              on-device data, ML features, QA with product and backend, and production release.
+              I own the path from requirement to Play Store / enterprise rollout, not only the
+              Android UI layer.
+            </p>
+            <p>
+              Stack across the product: Kotlin, Java, Jetpack Compose, XML Layouts, Flutter,
+              <strong>Spring Boot</strong>, MVVM Architecture, Clean Architecture, Dagger/Hilt,
+              Kotlin Coroutines, Flow, RESTful APIs, Retrofit, Room Database, WorkManager,
+              Firebase, Git, plus on-device ML with <strong>LiteRT</strong>,
+              <strong>MediaPipe</strong>, and <strong>ML Kit</strong>.
+              I use <strong>ChatGPT API</strong> / <strong>Gemini API</strong> when a cloud model
+              is the better fit.
+            </p>
+            <p>
+              Shipped Play Store apps with 4.5+ ratings, Streamly OTT Android TV with 200+ live
+              channels on ExoPlayer, a production Kiosk CMS with Lock Task Mode, and I am currently
+              building <strong>Medi AI</strong> — family healthcare with reminders, appointments,
+              health reports, and ChatGPT-powered doctor comparison.
+            </p>
+            <p>
+              Looking for SDE roles where I can own end-to-end delivery across mobile, Android TV,
+              kiosk, on-device ML, and healthcare products.
+            </p>
+          </div>
+        </section>
+
+        <section id="skills" class="reveal">
+          <h2>Skills</h2>
+          <div class="skill-groups" id="skill-groups">
+            <article class="glass pop-card" data-tilt>
+              <h3>Technical</h3>
+              <ul>
+                <li>Kotlin</li>
+                <li>Java</li>
+                <li>Android SDK</li>
+                <li>Jetpack Compose</li>
+                <li>XML Layouts</li>
+                <li>Material Design</li>
+                <li>MVVM Architecture</li>
+                <li>Clean Architecture</li>
+                <li>Dagger/Hilt</li>
+                <li>Jetpack Navigation</li>
+                <li>ViewModel</li>
+                <li>LiveData</li>
+                <li>StateFlow</li>
+              </ul>
+            </article>
+            <article class="glass pop-card" data-tilt>
+              <h3>Backend</h3>
+              <ul>
+                <li>Spring Boot</li>
+                <li>Java</li>
+                <li>REST APIs</li>
+                <li>JSON / Gson</li>
+                <li>Spring Data</li>
+              </ul>
+            </article>
+            <article class="glass pop-card" data-tilt>
+              <h3>APIs and data</h3>
+              <ul>
+                <li>RESTful APIs</li>
+                <li>Retrofit</li>
+                <li>OkHttp</li>
+                <li>JSON / Gson</li>
+                <li>Room Database</li>
+                <li>SQLite</li>
+                <li>WorkManager</li>
+                <li>Kotlin Coroutines</li>
+                <li>Flow</li>
+                <li>Git / GitHub</li>
+              </ul>
+            </article>
+            <article class="glass pop-card" data-tilt>
+              <h3>Firebase and tools</h3>
+              <ul>
+                <li>Firebase Auth</li>
+                <li>Firestore</li>
+                <li>FCM</li>
+                <li>Android Studio</li>
+                <li>Gradle</li>
+                <li>Google Play Console</li>
+                <li>Media3 ExoPlayer</li>
+                <li>ProGuard/R8</li>
+              </ul>
+            </article>
+            <article class="glass pop-card" data-tilt>
+              <h3>On-device ML</h3>
+              <ul>
+                <li>LiteRT</li>
+                <li>MediaPipe</li>
+                <li>ML Kit</li>
+                <li>On-device inference</li>
+                <li>Computer Vision</li>
+                <li>ChatGPT API</li>
+                <li>Gemini API</li>
+              </ul>
+            </article>
+            <article class="glass pop-card" data-tilt>
+              <h3>Domains</h3>
+              <ul>
+                <li>Android TV / OTT</li>
+                <li>EPG</li>
+                <li>Kiosk Mode</li>
+                <li>Lock Task Mode</li>
+                <li>Device Owner</li>
+                <li>Digital Signage</li>
+                <li>Healthcare / Medi AI</li>
+                <li>Flutter</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="experience" class="reveal">
+          <h2>Experience</h2>
+          <ol class="timeline" id="timeline">
+            <li class="glass pop-card">
+              <p class="when">Nov 2025 – Present · 1 year · Gurugram</p>
+              <h3>Software Development Engineer</h3>
+              <p class="org">CBSL Group</p>
+              <p>
+                Building production Android apps for digital signage, kiosk devices, and Medi AI
+                healthcare using Kotlin, Jetpack Compose, MVVM, Clean Architecture, and Hilt.
+              </p>
+            </li>
+            <li class="glass pop-card">
+              <p class="when">May 2024 – Nov 2025 · 1 year 6 months · Gurugram</p>
+              <h3>Associate Consultant – Development</h3>
+              <p class="org">Oodles Technologies</p>
+              <p>
+                Developed and maintained Android mobile and OTT applications in Kotlin, Java, and
+                Flutter. Shipped Play Store apps with 4.5+ average ratings and owned delivery
+                through Google Play Console. Built Streamly OTT Android TV and an AR dance
+                experience.
+              </p>
+            </li>
+            <li class="glass pop-card">
+              <p class="when">Dec 2023 – May 2024 · 6 months · Remote</p>
+              <h3>Android Developer Intern</h3>
+              <p class="org">Teachnook</p>
+              <p>
+                Built Android apps in Kotlin and Java with XML, RecyclerView, ViewModel, LiveData,
+                Navigation, Room, Retrofit, and Firebase Authentication, Firestore, and FCM.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section id="projects" class="reveal">
+          <h2>Projects</h2>
+          <p class="section-note" id="projects-note">Featured work is production / client software, so source is private. Personal GitHub links are public.</p>
+          <div class="project-grid" id="project-grid">
+            <article class="flip-card" aria-label="Project card, flips for details">
+              <div class="flip-inner">
+                <div class="flip-face flip-front">
+                  <p class="project-kicker">Current · CBSL Group</p>
+                  <h3>Medi AI – Family Healthcare</h3>
+                  <p>Kotlin + Compose Android app with a Spring Boot backend and ChatGPT doctor comparison.</p>
+                </div>
+                <div class="flip-face flip-back">
+                  <h3>Medi AI</h3>
+                  <p>End-to-end family healthcare: Spring Boot APIs plus Android (Kotlin / Jetpack Compose) for medicine tracking, appointments, health reports, smart search, and ChatGPT comparison of up to 3 doctors.</p>
+                  <ul class="tags">
+                    <li>Kotlin</li>
+                    <li>Compose</li>
+                    <li>Spring Boot</li>
+                    <li>REST</li>
+                    <li>ChatGPT API</li>
+                  </ul>
+                  <p class="project-status">Private client project</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip-card" aria-label="Project card, flips for details">
+              <div class="flip-inner">
+                <div class="flip-face flip-front">
+                  <p class="project-kicker">CBSL Group · Production</p>
+                  <h3>Kiosk CMS Android</h3>
+                  <p>Always-on digital signage player for branch kiosk hardware.</p>
+                </div>
+                <div class="flip-face flip-back">
+                  <h3>Kiosk CMS</h3>
+                  <p>Lock Task Mode, Device Owner, KeepAliveService, WorkManager offline sync, REST APIs, and Media3 ExoPlayer video zones.</p>
+                  <ul class="tags">
+                    <li>Compose</li>
+                    <li>Hilt</li>
+                    <li>WorkManager</li>
+                    <li>ExoPlayer</li>
+                    <li>Kiosk Mode</li>
+                  </ul>
+                  <p class="project-status">Private production app</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip-card" aria-label="Project card, flips for details">
+              <div class="flip-inner">
+                <div class="flip-face flip-front">
+                  <p class="project-kicker">Oodles Technologies</p>
+                  <h3>Streamly – OTT Android TV</h3>
+                  <p>OTT TV app with 200+ live channels and ExoPlayer streaming.</p>
+                </div>
+                <div class="flip-face flip-back">
+                  <h3>Streamly</h3>
+                  <p>200+ live channels, EPG, playback, channel listing, and end-to-end streaming for Android TV devices.</p>
+                  <ul class="tags">
+                    <li>Kotlin</li>
+                    <li>Android TV</li>
+                    <li>ExoPlayer</li>
+                    <li>EPG</li>
+                    <li>REST APIs</li>
+                  </ul>
+                  <p class="project-status">Private client project</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip-card" aria-label="Project card, flips for details">
+              <div class="flip-inner">
+                <div class="flip-face flip-front">
+                  <p class="project-kicker">Oodles Technologies</p>
+                  <h3>AR Dance Application</h3>
+                  <p>Object detection to 3D models that mimic dance movement.</p>
+                </div>
+                <div class="flip-face flip-back">
+                  <h3>AR Dance</h3>
+                  <p>AR experience using computer vision to generate 3D models that follow dance movements.</p>
+                  <ul class="tags">
+                    <li>AR</li>
+                    <li>Computer Vision</li>
+                    <li>Android</li>
+                  </ul>
+                  <p class="project-status">Private client project</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip-card" aria-label="Project card, flips for details">
+              <div class="flip-inner">
+                <div class="flip-face flip-front">
+                  <p class="project-kicker">Personal · Local AI</p>
+                  <h3>Resume ATS Analysis</h3>
+                  <p>Local RAG scoring with Android, Spring Boot, Ollama, and JVector.</p>
+                </div>
+                <div class="flip-face flip-back">
+                  <h3>ATS Analysis</h3>
+                  <p>PDF parsing, embeddings, vector search, and RAG — no cloud LLM.</p>
+                  <ul class="tags">
+                    <li>Android</li>
+                    <li>Spring Boot</li>
+                    <li>Ollama</li>
+                    <li>RAG</li>
+                  </ul>
+                  <a class="btn btn-primary" href="https://www.linkedin.com/posts/mahipalsinghad_android-springboot-ai-activity-7476319121932976128-11E7" target="_blank" rel="noopener noreferrer">LinkedIn write-up</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="flip-card" aria-label="Project card, flips for details">
+              <div class="flip-inner">
+                <div class="flip-face flip-front">
+                  <p class="project-kicker">Personal · Local AI</p>
+                  <h3>On-device text generation</h3>
+                  <p>Android + Spring Boot + Ollama, tunneled with ngrok.</p>
+                </div>
+                <div class="flip-face flip-back">
+                  <h3>Local LLM</h3>
+                  <p>Kotlin Retrofit client to a Spring Boot API backed by a local Ollama model.</p>
+                  <ul class="tags">
+                    <li>Kotlin</li>
+                    <li>Retrofit</li>
+                    <li>Spring Boot</li>
+                    <li>Ollama</li>
+                  </ul>
+                  <a class="btn btn-primary" href="https://www.linkedin.com/posts/mahipalsinghad_android-kotlin-springboot-activity-7473816526727405568-VeEi" target="_blank" rel="noopener noreferrer">LinkedIn write-up</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <h3 class="subhead">Public GitHub</h3>
+          <ul class="github-list" id="github-list">
+            <li><a href="https://github.com/mahipal2912/WeatherApp" target="_blank" rel="noopener noreferrer">WeatherApp</a></li>
+            <li><a href="https://github.com/mahipal2912/MusicApp2" target="_blank" rel="noopener noreferrer">MusicApp2</a></li>
+            <li><a href="https://github.com/mahipal2912/Messanger" target="_blank" rel="noopener noreferrer">Messanger</a></li>
+            <li><a href="https://github.com/mahipal2912/OneCbslAttendance" target="_blank" rel="noopener noreferrer">OneCbslAttendance</a></li>
+            <li><a href="https://github.com/mahipal2912/Rock_paper_Scissor_App" target="_blank" rel="noopener noreferrer">Rock paper scissor</a></li>
+            <li><a href="https://github.com/mahipal2912/spring-boot-example" target="_blank" rel="noopener noreferrer">spring-boot-example</a></li>
+          </ul>
+        </section>
+
+        <section id="education" class="reveal">
+          <h2>Education and certifications</h2>
+          <div class="two-col">
+            <article class="glass pop-card" data-tilt>
+              <h3>Education</h3>
+              <div id="education-list">
+              <p><strong>MCA</strong> · Manipal University Jaipur · 2023 – Sep 2025</p>
+              <p><strong>BCA</strong> · Jain University, Bangalore · Jan 2022</p>
+              </div>
+            </article>
+            <article class="glass pop-card" data-tilt>
+              <h3>Certifications</h3>
+              <ul class="plain" id="cert-list">
+                <li><a href="https://www.linkedin.com/learning/certificates/5862ac05966b8818aad2821005db877c7084b8957e9b2492936fcf899e1a5531" target="_blank" rel="noopener noreferrer">Kotlin Essential Training</a></li>
+                <li><a href="https://www.linkedin.com/learning/certificates/416eadd08eb00c9c23331f19117f0f159c8dc1ee0d4fe2fe22ed215e717c740a" target="_blank" rel="noopener noreferrer">Programming Foundations: Design Patterns</a></li>
+                <li><a href="https://www.linkedin.com/learning/certificates/ae726f7267d6225392e1b6cdc37dac7240a8940a4352076b8a277471be058e8c" target="_blank" rel="noopener noreferrer">Java: Data Structures</a></li>
+                <li>Android Development: Retrofit with Kotlin</li>
+                <li>Teachnook Android Development · TNCC2404-03717</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="contact" class="reveal">
+          <h2>Contact</h2>
+          <div class="glass contact-card pop-card">
+            <p id="contact-note">Use this same URL on Naukri, LinkedIn, and the resume so recruiters land here.</p>
+            <ul class="contact-list">
+              <li><span>Email</span> <a id="contact-email" href="mailto:smahipal778@gmail.com">smahipal778@gmail.com</a></li>
+              <li><span>Phone</span> <a id="contact-phone" href="tel:+916260849771">+91 6260849771</a></li>
+              <li><span>WhatsApp</span> <a id="contact-whatsapp" href="https://wa.me/916260849771" target="_blank" rel="noopener noreferrer">+91 6260849771</a></li>
+              <li><span>LinkedIn</span> <a id="contact-linkedin" href="https://www.linkedin.com/in/mahipalsinghad" target="_blank" rel="noopener noreferrer">linkedin.com/in/mahipalsinghad</a></li>
+              <li><span>GitHub</span> <a id="contact-github" href="https://github.com/mahipal2912" target="_blank" rel="noopener noreferrer">github.com/mahipal2912</a></li>
+              <li><span>Location</span> <span id="contact-location">Gurugram, India</span></li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-primary" id="contact-hire" href="mailto:smahipal778@gmail.com?subject=Android%20role%20for%20Mahipal%20Singh">Hire / collaborate</a>
+              <a class="btn btn-ghost" id="contact-resume" href="assets/Mahipal_Singh_Android_Developer_ATS.pdf" download>Download resume</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="update" class="reveal">
+          <h2>Update</h2>
+          <p class="section-note">
+            Edit any section here, then tap <strong>Save on this browser</strong>.
+            Changes show immediately. Visitors on GitHub Pages see the committed
+            <code>data.js</code> unless you download it and replace that file.
+          </p>
+          <div class="editor-toolbar">
+            <button class="btn btn-primary" id="editor-save" type="button">Save on this browser</button>
+            <button class="btn btn-ghost" id="editor-download" type="button">Download data.js</button>
+            <label class="btn btn-ghost editor-import">
+              Import JSON
+              <input id="editor-import" type="file" accept="application/json,.js" hidden />
+            </label>
+            <button class="btn btn-ghost" id="editor-reset" type="button">Reset to original</button>
+          </div>
+          <p class="editor-status" id="editor-status" hidden></p>
+          <div id="editor-root"></div>
+        </section>
+
+        <footer>
+          <p>© <span id="year"></span> <span id="footer-name">Mahipal Singh</span>. <span id="footer-note">Content matches the ATS resume and Naukri profile.</span></p>
+        </footer>
+      </main>
+    </div>
+    <script src="data.js?v=10"></script>
+    <script src="script.js?v=12"></script>
+  </body>
+</html>
